@@ -12,4 +12,3 @@
 * **linux_doc:** 存放linux学习使用心得文档
 * **docker_doc:** 存放linux学习使用心得文档
 * **ctf_doc:** 存放网络安全学习心得文档
-* **reverse_doc:** 存放逆向相关学习心得文档
