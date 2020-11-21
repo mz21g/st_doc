@@ -25,5 +25,8 @@ git clone http://10.10.2.22/iot_sat/ics_exploit.git
 # 获取远程feature-D分支
 git checkout -b feature-D
 git pull origin feature-D
+
+git branch -d <BranchName> # 删除本地分支
+git push origin --delete <BranchName> # 删除远程分支
 ```
 
