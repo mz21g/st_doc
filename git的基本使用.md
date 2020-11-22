@@ -28,5 +28,10 @@ git pull origin feature-D
 
 git branch -d <BranchName> # 删除本地分支
 git push origin --delete <BranchName> # 删除远程分支
+
+# 放弃修改，强制覆盖本地代码
+git fetch --all
+git reset --hard origin/cyz
+git pull origin cyz
 ```
 
