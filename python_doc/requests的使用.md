@@ -81,3 +81,9 @@ r = requests.post('http://httpbin.org/post', files=files)
 print(r.text)
 ```
 
+#### 禁止重定向
+
+```python
+r = requests.get('http://github.com', allow_redirects=False)
+```
+
