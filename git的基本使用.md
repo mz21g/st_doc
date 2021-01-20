@@ -33,5 +33,8 @@ git push origin --delete <BranchName> # 删除远程分支
 git fetch --all
 git reset --hard origin/cyz
 git pull origin cyz
+
+# 强制提交本地分支覆盖远程分支
+git push origin <BranchName>  --force
 ```
 
