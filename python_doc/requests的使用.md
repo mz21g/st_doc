@@ -55,10 +55,10 @@ with open('favicon.ico', 'wb') as f:
 
 ```python
 import requests
-s = requests.Session
-s.get('http://httpbin.org/cookies/set/number/123456789')
-r = s.get('http://httpbin.org/cookies')
-print(r.text)
+with requests.Session() as sess:
+    s.get('http://httpbin.org/cookies/set/number/123456789')
+    r = s.get('http://httpbin.org/cookies')
+    print(r.text)
 ```
 
 #### 超时设置
