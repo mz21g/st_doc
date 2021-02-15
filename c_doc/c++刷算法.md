@@ -75,3 +75,97 @@ int main(){
 }
 ```
 
+## C++ STL之集合set的使用
+
+`set`是集合，一个`set`里面的各个元素是各不相同的，而且`set`会按照元素进行从小到大排序
+
+```c++
+#include <iostream>
+#include <set>
+using namespace std;
+int main(){
+  set<int> s;
+  s.insert(1); 
+  cout << *(s.begin()) << endl; // 输出集合s的第一个元素（前面的星号表示要对指针取值）
+  // 用迭代器遍历集合s里面的每一个元素
+  for (auto it = s.begin(); it != s.end(); it++)
+    cout << *it << " ";
+  // 查找集合s中的值，如果结果等于s.end()表示未找到（因为s.end()表示s的最后一个元素的下一个元素所在的位置）
+  cout << endl << (s.find(2) != s.end()) << endl;
+  s.erase(2); // 删除集合s中的2这个元素
+}
+```
+
+## C++ STL之映射map的使用
+
+`map`使用的头文件`#include <map>`
+
+`map`是键值对，比如一个人名对应一个学号，就可以定义一个字符串`string`类型的人名为”键“，学号`int`类型为”值“，如`map<string, int> m`，`map`会自动将所有的键值对从小到大排序
+
+```c++
+#include <iostream>
+#include <map>
+#include <string>
+using namespace std;
+int main(){
+  map<string, int> m;
+  m["hello"] = 2;
+  cout << m["hello"] << endl; // 访问map的key为”hello“的value，如果key不存在，则返回0
+  // 用迭代器遍历，输出map中所有的元素，键用it->first获取，值用it->second获取
+  for (auto it = m.begin(); it != m.end(); it++)
+    cout << it->first << " " << it->second << endl;
+  // 访问map的第一个元素，输出它的键和值
+  cout << m.begin()->first << " " << m.begin()->second << endl;
+  // 访问map的最后一个元素，输出它的键和值
+  cout << m.rbegin()->first << " " << m.rbegin()->second << endl;
+  // 输出map的元素个数
+  cout << m.size() << endl;
+}
+```
+
+## C++ STL之unordered_map和unordered_set的使用
+
+`unordered_map`在头文件`#include <unordered_map>`中，`unordered_set`在头文件`#include <unordered_set>`中
+
+`map`会按照键值对的键`key`进行排序（`set`里面会按照集合中的元素大小进行排序，从小到大顺序）
+
+`unordered_map`和`unordered_set`省去了这个排序的过程
+
+## C++ STL之栈stack的使用
+
+栈`stack`在头文件`#include <stack>`中
+
+```c++
+#include <iostream>
+#include <stack>
+using namespace std;
+int main(){
+  stack<int> s;
+  for (int i = 0; i < 6; i++)
+    s.push(i); // 压栈
+  cout << s.top() << endl; // 访问栈顶元素
+  cout << s.size() << endl; // 输出s的元素个数
+  s.pop(); // 移除栈顶元素
+  return 0;
+}
+```
+
+## C++ STL之队列queue的使用
+
+队列`queue`在头文件`#include <queue>`中
+
+```c++
+#include <iostream>
+#include <queue>
+using namespace std;
+int main(){
+  queue<int> q;
+  for (int i = 0; i < 6; i++)
+    q.push(i); // 压入队列
+  cout << q.front() << " " << q.back() << endl; // 访问队列的队首元素和队尾元素
+  cout << q.size() << endl; // 输出队列的元素个数
+  q.pop(); // 移除队列的队首元素
+  return 0;
+}
+```
+
