@@ -17,3 +17,5 @@
 `hexo new draft <title>` 创建一个草稿
 
 `hexo publish post <title>` 将草稿移动到` source/_posts`文件夹
+
+test
